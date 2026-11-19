@@ -38,11 +38,50 @@ footer{border-top:1px solid var(--bd);padding:28px 0;color:var(--mu);font-size:1
 .f{display:grid;gap:14px}.f label{font-size:13px;color:var(--mu);font-weight:600;display:grid;gap:6px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .tb{display:flex;gap:6px;flex-wrap:wrap;padding:8px;background:var(--bg2);border:1px solid var(--bd);border-radius:10px 10px 0 0}.tb button{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:6px;padding:5px 10px;cursor:pointer;font:inherit;font-size:13px}.tb button:hover{border-color:var(--cy)}
 #ce{min-height:320px;background:var(--bg2);border:1px solid var(--bd);border-top:0;border-radius:0 0 10px 10px;padding:16px}
-.ed2{display:grid;grid-template-columns:370px 1fr;gap:22px;align-items:start}.ctl{display:grid;gap:12px;min-width:0}.ctl details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px}.ctl summary{cursor:pointer;font-weight:700;color:var(--cy)}.ctl .f{margin-top:14px}
-.pvbox{position:sticky;top:76px;min-width:0}#pvw{height:calc(76vh/.6);overflow:auto;border:1px solid var(--cy);border-radius:14px;zoom:.6}
-.pre{display:flex;gap:8px;flex-wrap:wrap}.ck{display:flex!important;grid-template-columns:none;gap:8px;align-items:center}.ck input{width:auto}
-@media(max-width:900px){.ed2{grid-template-columns:1fr}.pvbox{position:static}#pvw{zoom:1;height:70vh}}
+.ck{display:flex!important;grid-template-columns:none;gap:8px;align-items:center}.ck input{width:auto}
 @media(max-width:760px){.adm{grid-template-columns:1fr}.side{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--bd)}.side a{white-space:nowrap}.main{padding:18px}.two{grid-template-columns:1fr}nav .w{height:auto;padding:10px 20px;gap:12px}}
+
+/* ===== seasonal particles ===== */
+.fxl{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:4}.fxl.fixed{position:fixed}
+.fxl span{position:absolute;top:-40px;opacity:.85;animation:fxd linear infinite;will-change:transform}
+.fxl.up span{top:auto;bottom:-40px;animation-name:fxu}
+@keyframes fxd{0%{transform:translate(0,-6vh) rotate(0)}100%{transform:translate(var(--sw),112vh) rotate(360deg)}}
+@keyframes fxu{0%{transform:translate(0,6vh) rotate(0)}100%{transform:translate(var(--sw),-112vh) rotate(200deg)}}
+
+/* ===== visual editor ===== */
+.ed{position:fixed;inset:0;z-index:100;display:grid;grid-template-rows:50px minmax(0,1fr);background:#0c0c0d;color:#cfcfd4;font:13px/1.45 Inter,"Segoe UI",system-ui,sans-serif;--ea:#2f6bff;--ep:#141415;--eb:#262628;--em:#85858d;--ei:#1c1c1e}
+.ed button,.ed input,.ed select,.ed textarea{font:inherit}
+.ed input,.ed select,.ed textarea{background:var(--ei);border:1px solid var(--eb);color:#e7e7ea;border-radius:6px;padding:6px 8px;width:100%;min-width:0}
+.ed input:focus,.ed select:focus,.ed textarea:focus{outline:1px solid var(--ea);border-color:transparent}
+.ed input[type=color]{padding:2px;height:30px;width:38px;flex:none;cursor:pointer}.ed input[type=range]{padding:0;height:20px}.ed input[type=checkbox]{width:auto}
+.ed .ebtn{background:var(--ei);border:1px solid var(--eb);color:#ddd;border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap;display:inline-block}
+.ed .ebtn:hover{border-color:#44444a;color:#fff}.ed .ebtn.pri{background:var(--ea);border-color:var(--ea);color:#fff;font-weight:600;padding:6px 18px}.ed .ebtn.pri.dirty{box-shadow:0 0 0 3px rgba(47,107,255,.35)}.ed .ebtn:disabled{opacity:.6}
+.etop{display:flex;align-items:center;gap:10px;padding:0 12px;background:var(--ep);border-bottom:1px solid var(--eb);min-width:0}
+.etop select{width:auto}.etop b{color:#fff}.ssl{color:var(--em);font-size:12px;white-space:nowrap}.ssl.u{color:#ffbe32}
+.eb{display:grid;grid-template-columns:260px minmax(0,1fr) 310px;min-height:0}
+.lp{background:var(--ep);border-right:1px solid var(--eb);overflow:auto;padding:6px 0}
+.lh{padding:8px 12px 10px;color:#fff;border-bottom:1px solid var(--eb);margin-bottom:6px}
+.lr{display:flex;align-items:center;gap:6px;padding:4px 8px;cursor:pointer;color:#b9b9c0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lr:hover{background:#1f1f22}.lr.on{background:var(--ea);color:#fff}
+.lr .car{width:12px;flex:none;color:#777;font-size:10px;text-align:center}.lr .ic{width:11px;height:11px;border-radius:3px;background:#3d7bff;flex:none}.lr.tx{color:#8f8f97;font-style:italic}.lr small{color:#7c7c85}.lr.on small{color:#cfdcff}
+.cn{position:relative;background:#121213;min-width:0;min-height:0}
+.cvf{position:absolute;inset:14px;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px #2a2a2c}
+#pvw{overflow:auto}
+.sbox,.hbox{position:absolute;pointer-events:none;display:none;z-index:6}.sbox{border:1.5px solid #2f6bff;box-shadow:0 0 0 1px rgba(47,107,255,.25)}.hbox{border:1px dashed #6aa0ff;z-index:5}
+.slab{position:absolute;display:none;background:#2f6bff;color:#fff;font-size:11px;padding:1px 8px;border-radius:5px 5px 0 0;z-index:7;pointer-events:none;font-family:Inter,system-ui,sans-serif}
+.ftb{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:8;display:flex;align-items:center;gap:6px;background:#1b1b1d;border:1px solid #2e2e31;border-radius:12px;padding:6px 8px;box-shadow:0 8px 30px rgba(0,0,0,.55);white-space:nowrap}
+.ftb .vs{width:1px;height:20px;background:#2e2e31;margin:0 4px}.ftb #zl{min-width:42px;text-align:center}.ftb a{color:#8fb0ff;cursor:pointer;margin-left:4px}.chip2{background:#232326;border-radius:99px;padding:3px 10px}
+.rp{background:var(--ep);border-left:1px solid var(--eb);overflow:auto;min-width:0}
+.tabs{display:flex;border-bottom:1px solid var(--eb);position:sticky;top:0;background:var(--ep);z-index:2}
+.tabs button{flex:1;background:none;border:0;border-bottom:2px solid transparent;color:var(--em);padding:12px 4px;cursor:pointer}.tabs button.on{color:#fff;border-bottom-color:var(--ea);background:#19191b}
+.sc{border-bottom:1px solid var(--eb);padding:10px 12px;display:block}.sc>summary{cursor:pointer;font-weight:600;color:#ececf0;list-style:none;display:flex;justify-content:space-between}.sc>summary::after{content:"+";color:var(--em)}.sc[open]>summary::after{content:"–"}.sc>summary::-webkit-details-marker{display:none}
+.eh{display:flex;align-items:center;gap:8px}.tg2{background:#2f6bff;color:#fff;border-radius:5px;padding:1px 8px;font-size:11px}.hint{color:var(--em);font-size:12px;margin:0}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-top:10px}.fl{display:grid;gap:4px;font-size:11px;color:var(--em);align-content:start;min-width:0}.wide{grid-column:1/-1}
+.cf2{display:flex;gap:6px}.seg{display:flex;background:var(--ei);border:1px solid var(--eb);border-radius:6px;overflow:hidden}.seg button{flex:1;background:none;border:0;color:var(--em);padding:6px;cursor:pointer}.seg button.on{background:#2a2a2e;color:#fff}
+.gbar{height:16px;border-radius:5px;border:1px solid var(--eb)}.stop{display:grid;grid-template-columns:38px 1fr 62px 30px;gap:6px;align-items:center}.pre{display:flex;gap:6px;flex-wrap:wrap}
+.ed .ck{display:flex;gap:8px;align-items:center;font-size:12px;color:#cfcfd4}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.scard{border:1px solid var(--eb);border-radius:10px;padding:10px;cursor:pointer;background:var(--ei)}.scard.on{border-color:var(--ea);box-shadow:0 0 0 1px var(--ea)}.scard small{color:var(--em)}.sw{display:flex;height:14px;border-radius:4px;overflow:hidden;margin-top:8px}.sw i{flex:1}
+@media(max-width:1000px){.eb{grid-template-columns:200px minmax(0,1fr) 270px}}
+@media(max-width:760px){.eb{grid-template-columns:1fr;grid-template-rows:55vh auto auto;overflow:auto}.lp,.rp{border:0;overflow:visible}.etop .ssl{display:none}}
 </style><style id="cu"></style></head><body class="sk">
 <div id="app"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.js"></script>
@@ -50,11 +89,12 @@ footer{border-top:1px solid var(--bd);padding:28px 0;color:var(--mu);font-size:1
 const SB_URL='https://kiiczpjqifynjxczpqls.supabase.co',SB_KEY='sb_publishable_ZQt3Ua8oi7pNPaAcFrBrIA_0oIx4gD-';
 const sb=supabase.createClient(SB_URL,SB_KEY);
 const $=s=>document.querySelector(s),app=$('#app');
-let isAdmin=false,all=[],pub=[],drafts=[],cats=[],site={t:{},th:{},css:''},loaded=false,ed=null,q='',cat='',sort='new',pg=1,loadErr='',pvp='home';
+let isAdmin=false,all=[],pub=[],drafts=[],cats=[],site={t:{},th:{},css:'',el:{},season:{mode:'off',pick:'autumn'},seasons:{}},loaded=false,ed=null,q='',cat='',sort='new',pg=1,loadErr='',pvp='home';
 const PAGE=6,esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fd=d=>d?new Date(String(d).slice(0,10)+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'';
 const today=()=>new Date().toISOString().slice(0,10);
 function clean(h){const d=new DOMParser().parseFromString(h||'','text/html');d.querySelectorAll('script,iframe,object,embed,style,link').forEach(e=>e.remove());d.querySelectorAll('*').forEach(e=>[...e.attributes].forEach(a=>{if(/^on/i.test(a.name)||/^\s*javascript:/i.test(a.value))e.removeAttribute(a.name)}));return d.body.innerHTML}
+function ns(){site.t=site.t||{};site.th=site.th||{};site.css=site.css||'';site.el=site.el||{};site.season=site.season||{mode:'off',pick:'autumn'};site.seasons=site.seasons||{}}
 
 /* ---------- EDITABLE TEXTS: [group,key,label,default,multiline] ---------- */
 const F=[
@@ -84,20 +124,187 @@ const stack=f=>f=='System'?'system-ui,"Segoe UI",sans-serif':`"${f}",${/Playfair
 function loadFont(f){const id='f-'+f.replace(/ /g,'');if(f=='System'||document.getElementById(id))return;const l=document.createElement('link');l.id=id;l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family='+f.replace(/ /g,'+')+':wght@400;600;800&display=swap';document.head.appendChild(l)}
 function theme(el,th){const t={...TH,...th};CF.forEach(([k])=>el.style.setProperty('--'+k,t[k]));el.style.setProperty('--r',t.r+'px');el.style.setProperty('--w',t.w+'px');el.style.setProperty('--font',stack(t.font));loadFont(t.font)}
 
-/* ---------- AUTOSAVE ---------- */
-let svT;const stat=m=>{const e=$('#sst');if(e)e.textContent=m};
-function sv(){if(!loaded){alert('Site settings did not load, so saving is disabled to protect your data. Refresh and try again.');return}stat('Saving…');clearTimeout(svT);svT=setTimeout(async()=>{const{error}=await sb.from('settings').upsert({key:'site',value:site});stat(error?'⚠ Not saved: '+error.message:'✓ Saved — live for everyone')},800)}
-const sT=(k,v)=>{site.t[k]=v;updPv();sv()},sTh=(k,v)=>{site.th[k]=v;updPv();sv()};
-const preset=k=>{site.th={...PR[k]};sv();render()};
-const resetAll=()=>{if(confirm('Reset ALL texts, colors and custom CSS to the defaults?')){site={t:{},th:{},css:''};sv();render()}};
+/* ---------- SEASONS ---------- */
+const SEASONS={
+spring:{name:'Blossom',icon:'🌸',badge:'🌸 SPRING EDITION',bg:'#fff7fb',bg2:'#fdeaf2',card:'#ffffff',bd:'#f3cfe0',tx:'#34202d',mu:'#8a6a7b',cy:'#e8478b',bl:'#5fcf8a',on:'#ffffff',font:'Poppins',r:22,fx:'🌸 🌷 🌼',fxn:16,fxs:16,dir:'down'},
+summer:{name:'Sunburst',icon:'☀️',badge:'☀️ SUMMER EDITION',bg:'#04202e',bg2:'#073049',card:'#0a3f5e',bd:'#17688f',tx:'#ffffff',mu:'#a9d6ea',cy:'#ffc61a',bl:'#ff6a3d',on:'#2b1700',font:'DM Sans',r:18,fx:'✨ ☀️ 🌊',fxn:14,fxs:20,dir:'up'},
+autumn:{name:'Harvest',icon:'🍂',badge:'🍂 AUTUMN EDITION',bg:'#1a0f08',bg2:'#26160c',card:'#33200f',bd:'#5c3b1d',tx:'#fff3e3',mu:'#cbab8c',cy:'#ff8a2b',bl:'#c2410c',on:'#1f0d00',font:'Merriweather',r:8,fx:'🍂 🍁 🍃',fxn:18,fxs:15,dir:'down'},
+winter:{name:'Frost',icon:'❄️',badge:'❄️ WINTER EDITION',bg:'#0a1422',bg2:'#101f35',card:'#152844',bd:'#294a75',tx:'#f4f9ff',mu:'#a8bfd9',cy:'#9fe4ff',bl:'#6fa8ff',on:'#06182a',font:'Space Grotesk',r:14,fx:'❄️ ❅ ❆',fxn:24,fxs:18,dir:'down'}};
+const sdef=k=>({...SEASONS[k],...((site.seasons||{})[k]||{})});
+const seasonOf=()=>{const m=new Date().getMonth();return m>=2&&m<=4?'spring':m>=5&&m<=7?'summer':m>=8&&m<=10?'autumn':'winter'};
+let pvS=null;
+const actS=()=>{const m=(site.season||{}).mode;return m=='manual'?site.season.pick:m=='auto'?seasonOf():null};
+const curS=()=>pvS||actS();
+function effTh(){const b={...TH,...site.th},s=curS();if(!s)return b;const d=sdef(s);CF.forEach(([k])=>b[k]=d[k]);b.font=d.font;b.r=d.r;return b}
+const bdg=()=>{const s=curS();return s&&sdef(s).badge?esc(sdef(s).badge):tx('badge')};
+function fxSync(host,s,fixed){if(!host)return;const d=s?sdef(s):null;const em=d&&!matchMedia('(prefers-reduced-motion: reduce)').matches?(d.fx||'').split(/\s+/).filter(Boolean):[];const key=em.length&&+d.fxn>0?JSON.stringify([em,d.fxn,d.fxs,d.dir,!!fixed]):'';if(host._fk===key)return;host._fk=key;host.querySelectorAll(':scope > .fxl').forEach(e=>e.remove());if(!key)return;const l=document.createElement('div');l.className='fxl '+(d.dir=='up'?'up ':'')+(fixed?'fixed':'');const n=Math.min(60,+d.fxn||0),sp=Math.max(4,+d.fxs||14);for(let i=0;i<n;i++){const p=document.createElement('span');p.textContent=em[i%em.length];p.style.cssText=`left:${(Math.random()*100).toFixed(1)}%;font-size:${(12+Math.random()*16).toFixed(0)}px;animation-duration:${(sp*(.7+Math.random()*.8)).toFixed(1)}s;animation-delay:-${(Math.random()*sp).toFixed(1)}s;--sw:${((Math.random()-.5)*120).toFixed(0)}px`;l.appendChild(p)}host.appendChild(l)}
 
+/* ---------- PER-ELEMENT STYLES ---------- */
+const GS0=[{c:'#b3ff00',p:0},{c:'#ffffff',p:100}];
+const PX=['fontSize','letterSpacing','gap','maxWidth','borderRadius','borderWidth'];
+const SHD={none:'none',soft:'0 10px 30px rgba(0,0,0,.28)',glow:'0 0 30px var(--cy)',hard:'6px 6px 0 var(--cy)'};
+const kb=p=>p.replace(/[A-Z]/g,m=>'-'+m.toLowerCase());
+const grad=(s,bar)=>{const st=(s.gs||GS0).map(x=>`${x.c} ${x.p}%`).join(',');return bar?`linear-gradient(90deg,${st})`:s.gt=='radial'?`radial-gradient(circle,${st})`:`linear-gradient(${s.ga??135}deg,${st})`};
+function declOf(s){const d=[];
+for(const p of ['color','fontSize','fontWeight','letterSpacing','lineHeight','textAlign','textTransform','padding','margin','gap','maxWidth','display','borderRadius','borderWidth','borderColor','opacity']){let v=s[p];if(v===undefined||v==='')continue;if(PX.includes(p)&&/^-?[\d.]+$/.test(String(v)))v+='px';d.push(`${kb(p)}:${v} !important`);if(p=='borderWidth')d.push('border-style:solid !important')}
+if(s.shadow&&SHD[s.shadow])d.push(`box-shadow:${SHD[s.shadow]} !important`);
+if(s.bgType=='color'&&s.bgColor)d.push('background-image:none !important',`background-color:${s.bgColor} !important`);
+if(s.bgType=='image'&&s.bgImg)d.push(`background-image:url('${encodeURI(s.bgImg).replace(/'/g,'%27')}') !important`,'background-size:cover !important','background-position:center !important');
+if(s.bgType=='gradient'){d.push(`background-image:${grad(s)} !important`);if(s.textGrad)d.push('-webkit-background-clip:text !important','background-clip:text !important','color:transparent !important','-webkit-text-fill-color:transparent !important')}
+if(s.raw)d.push(s.raw);return d.join(';')}
+const R=(tag,name,sel,text)=>({tag,name,sel,text:text?[].concat(text):[]});
+const REG={
+page:R('div','Page','&'),
+nav:R('nav','Navigation bar','nav'),logo:R('div','Logo','nav .logo',['name','accent']),
+nhome:R('a','Home link','nav a.l:nth-of-type(1)','nav_home'),nres:R('a','Research link','nav a.l:nth-of-type(2)','nav_research'),nabout:R('a','About link','nav a.l:nth-of-type(3)','nav_about'),ncont:R('a','Contact link','nav a.l:nth-of-type(4)','nav_contact'),nbtn:R('a','Login button','nav .btn',['nav_login','nav_dash']),
+hero:R('section','Hero','.hero'),badge:R('span','Badge','.hero .badge','badge'),h1:R('h1','Headline','.hero h1',['h1a','h1b','h1c']),h1em:R('em','Headline accent','.hero h1 em','h1b'),herop:R('p','Hero text','.hero p','hero_p'),herobtn:R('a','Hero button','.hero .btn','hero_btn'),
+lat:R('section','Latest research','.hero + .sec'),lath:R('h2','Heading','.hero + .sec h2','latest_h'),
+grid:R('div','Card grid','.grid'),card:R('div','Card','.card'),cth:R('div','Card image','.card .th'),ctag:R('span','Card tag','.card .tag','general'),ctit:R('h3','Card title','.card h3'),cdesc:R('p','Card text','.card .cb p'),cbtn:R('span','Card button','.card .btn','read_btn'),
+xsec:R('section','Extra section','.hero + .sec + .sec'),xh:R('h2','Extra heading','.hero + .sec + .sec h2','x_h'),xp:R('p','Extra text','.hero + .sec + .sec p','x_p'),
+foot:R('footer','Footer','footer'),fbadge:R('span','Footer badge','footer .badge','foot_l'),ftxt:R('span','Footer text','footer .w > span:last-child','foot_r'),
+sec:R('section','Section','.sec'),rh:R('h1','Heading','.sec h1','arch_h'),bar:R('div','Search bar','.bar'),search:R('input','Search field','.bar input','search_ph'),sort:R('select','Sort menu','.bar select',['sort_new','sort_old']),chips:R('div','Category chips','.chips'),chip:R('button','Chip','.chip','all'),more:R('button','Load more button','.sec p > .btn','load_more'),
+abh:R('h1','Heading','.art h1','about_h'),abp:R('p','About text','.art .body','about'),
+coh:R('h1','Heading','.art h1','contact_h'),cop:R('p','Contact text','.art .body',['contact_pre','email','contact_none']),
+art:R('div','Article','.art'),artback:R('a','Back link','.art > a:first-child','back'),arth:R('h1','Title','.art h1'),artbody:R('div','Body text','.art .body'),artrefs:R('div','References','.refs'),artbtn:R('a','Bottom button','.art > a.btn','back2')};
+const L=(k,ch)=>({k,ch});
+const NAV=L('nav',[L('logo'),L('nhome'),L('nres'),L('nabout'),L('ncont'),L('nbtn')]),CARD=L('card',[L('cth'),L('ctag'),L('ctit'),L('cdesc'),L('cbtn')]),FOOT=L('foot',[L('fbadge'),L('ftxt')]);
+const TREE={
+home:L('page',[NAV,L('hero',[L('badge'),L('h1',[L('h1em')]),L('herop'),L('herobtn')]),L('lat',[L('lath'),L('grid',[CARD])]),L('xsec',[L('xh'),L('xp')]),FOOT]),
+research:L('page',[NAV,L('sec',[L('rh'),L('bar',[L('search'),L('sort')]),L('chips',[L('chip')]),L('grid',[CARD]),L('more')]),FOOT]),
+about:L('page',[NAV,L('sec',[L('abh'),L('abp')]),FOOT]),
+contact:L('page',[NAV,L('sec',[L('coh'),L('cop')]),FOOT]),
+article:L('page',[NAV,L('art',[L('artback'),L('arth'),L('artbody'),L('artrefs'),L('artbtn')]),FOOT])};
+const treeFor=p=>p.startsWith('r-')?TREE.article:(TREE[p]||TREE.home);
+const flat=n=>[n.k].concat(...(n.ch||[]).map(flat));
+function elCss(p){return Object.entries(site.el||{}).map(([k,s])=>{const E=REG[k];if(!E)return'';const d=declOf(s);return d?`${E.sel=='&'?(p||'body'):p+' '+E.sel}{${d}}`:''}).join('\n')}
+
+/* ---------- EDITOR STATE ---------- */
+let sel='page',tab='style',zoom=1,sSel=null,col={},op={},hist=[],hi=-1,isDirty=false,hT;
+const ens=k=>(site.el[k]=site.el[k]||{});
+function setSt(m){const e=$('#sst'),b=$('#savebtn');if(e){e.textContent=m||(isDirty?'● Unsaved changes':'✓ All changes saved');e.className='ssl'+(isDirty&&!m?' u':'')}if(b)b.classList.toggle('dirty',isDirty)}
+function flush(){clearTimeout(hT);const j=JSON.stringify(site);if(hist[hi]!==j){hist=hist.slice(0,hi+1);hist.push(j);hi=hist.length-1;if(hist.length>80){hist.shift();hi--}}}
+function dirty(){isDirty=true;setSt();clearTimeout(hT);hT=setTimeout(flush,350)}
+function restore(){site=JSON.parse(hist[hi]);ns();isDirty=true;renderLeft();renderRight();updPv();setSt()}
+const undo=()=>{flush();if(hi>0){hi--;restore()}},redo=()=>{if(hi<hist.length-1){hi++;restore()}};
+const sT=(k,v)=>{site.t[k]=v;dirty();updPv();renderLeft()};
+const sTh=(k,v)=>{site.th[k]=v;dirty();updPv()};
+const preset=k=>{site.th={...PR[k]};dirty();updPv();renderRight()};
+const eS=(k,p,v)=>{const o=ens(k);if(v===''||v==null||v===false)delete o[p];else o[p]=v;if(!Object.keys(o).length)delete site.el[k];dirty();updPv()};
+const resetEl=()=>{delete site.el[sel];dirty();updPv();renderRight()};
+const resetAll=()=>{if(confirm('Reset ALL texts, colors, element styles, seasons and custom CSS to the defaults?')){site={t:{},th:{},css:'',el:{},season:{mode:'off',pick:'autumn'},seasons:{}};pvS=null;dirty();renderLeft();renderRight();updPv()}};
+async function saveSite(){if(!loaded){alert('Site settings did not load, so saving is disabled to protect your data. Refresh and try again.');return}flush();const b=$('#savebtn');if(b){b.disabled=true;b.textContent='Saving…'}const{error}=await sb.from('settings').upsert({key:'site',value:site});if(b){b.disabled=false;b.textContent='Save'}if(error){setSt('⚠ Not saved: '+error.message);return}isDirty=false;setSt()}
+async function leave(){if(isDirty&&!confirm('You have unsaved changes. Leave without saving?'))return;if(isDirty){isDirty=false;await load()}go('admin')}
+const setPage=v=>{pvp=v;if(!flat(treeFor(pvp)).includes(sel))sel='page';renderLeft();renderRight();updPv()};
+const pickS=k=>{sSel=k;pvS=k;renderRight();updPv()};
+const sSet=(f,v)=>{const k=sSel;site.seasons[k]={...(site.seasons[k]||{}),[f]:v};pvS=k;dirty();updPv()};
+const toHex=c=>{c=String(c);if(!c.startsWith('rgb'))return'';const m=c.match(/[\d.]+/g);if(!m||m.length<3||(m.length>3&&+m[3]===0))return'';return'#'+m.slice(0,3).map(x=>Math.round(+x).toString(16).padStart(2,'0')).join('')};
+const pvEl=k=>{const E=REG[k],r=$('#pvw');if(!r||!E)return null;return E.sel=='&'?r:r.querySelector(E.sel)};
+const gcs=(k,p)=>{const e=pvEl(k);return e?getComputedStyle(e)[p]:''};
+function hit(t){const ks=flat(treeFor(pvp)).reverse(),root=$('#pvw');for(let a=t;a&&a!==root;a=a.parentElement){for(const k of ks){const E=REG[k];if(E.sel!='&'&&a.matches(E.sel))return k}}return'page'}
+function box(id,k,label){const f=$('.cvf'),b=$('#'+id);if(!f||!b)return;const e=pvEl(k);if(!e){b.style.display='none';if(label)$('#slab').style.display='none';return}const fr=f.getBoundingClientRect(),r=e.getBoundingClientRect();if(!r.width&&!r.height){b.style.display='none';if(label)$('#slab').style.display='none';return}b.style.cssText=`display:block;left:${r.left-fr.left}px;top:${r.top-fr.top}px;width:${r.width}px;height:${r.height}px`;if(label){const l=$('#slab');l.textContent=REG[k].tag;l.style.cssText=`display:block;left:${Math.max(0,r.left-fr.left)}px;top:${Math.max(0,r.top-fr.top-19)}px`}}
+const drawSel=()=>box('sbox',sel,1);
+function pick(k){sel=k;renderLeft();renderRight();drawSel();const e=pvEl(k);if(e&&k!='page')e.scrollIntoView({block:'nearest'});setTimeout(drawSel,50)}
+const tg=k=>{col[k]=!col[k];renderLeft()};
+function applyZoom(){const pv=$('#pvw');if(!pv)return;pv.style.zoom=zoom;pv.style.height=pv.style.width=(100/zoom)+'%';const z=$('#zl');if(z)z.textContent=Math.round(zoom*100)+'%';drawSel()}
+const zm=d=>{zoom=Math.min(1.25,Math.max(.5,+(zoom+d).toFixed(2)));applyZoom()};
+
+/* ---------- EDITOR UI ---------- */
+function editorShell(){if(!hist.length){hist=[JSON.stringify(site)];hi=0}if(!flat(treeFor(pvp)).includes(sel))sel='page';
+const pages=[['home','Home'],['research','Research'],['about','About'],['contact','Contact']].concat(pub.length?[['r-'+pub[0].id,'Article']]:[]);
+return `<div class="ed"><div class="etop"><button class="ebtn" onclick="leave()">← Dashboard</button><b>Website Editor</b><select id="pgsel" onchange="setPage(this.value)">${pages.map(([k,l])=>`<option value="${k}" ${pvp==k?'selected':''}>Page: ${l}</option>`).join('')}</select><span class="sp"></span><span id="sst" class="ssl"></span><a class="ebtn" href="#home" onclick="return !isDirty||confirm('You have unsaved changes. Leave without saving?')">View live</a><button class="ebtn pri" id="savebtn" onclick="saveSite()">Save</button></div>
+<div class="eb"><div class="lp" id="lay"></div><div class="cn"><div class="cvf"><div id="pvw" class="sk"></div><div class="hbox" id="hbox"></div><div class="sbox" id="sbox"></div><div class="slab" id="slab"></div></div>
+<div class="ftb"><button class="ebtn" onclick="undo()" title="Undo (Ctrl+Z)">↶</button><button class="ebtn" onclick="redo()" title="Redo">↷</button><span class="vs"></span><button class="ebtn" onclick="zm(-.25)">−</button><span id="zl">100%</span><button class="ebtn" onclick="zm(.25)">+</button><span class="vs"></span><span id="sch"></span></div></div>
+<div class="rp" id="rp"></div></div></div>`}
+function initEditor(){const pv=$('#pvw');
+pv.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();pick(hit(e.target))},true);
+pv.addEventListener('mousedown',e=>e.preventDefault(),true);
+pv.addEventListener('mousemove',e=>{const k=hit(e.target);if(k==sel)$('#hbox').style.display='none';else box('hbox',k)});
+pv.addEventListener('mouseleave',()=>$('#hbox').style.display='none');
+pv.addEventListener('scroll',()=>{$('#hbox').style.display='none';drawSel()});
+renderLeft();renderRight();applyZoom();updPv();setSt()}
+function pvt(E){return E.text.map(k=>String(raw(k)||'')).join(' ').replace(/\s+/g,' ').trim()}
+function row(n,d){const E=REG[n.k],kids=n.ch||[],hasT=E.text.length;
+let h=`<div class="lr ${sel==n.k?'on':''}" style="padding-left:${8+d*14}px" onclick="pick('${n.k}')"><span class="car" onclick="event.stopPropagation();tg('${n.k}')">${kids.length||hasT?(col[n.k]?'▸':'▾'):''}</span><i class="ic"></i>${E.tag} <small>${esc(E.name)}</small></div>`;
+if(!col[n.k]){if(hasT){const t=pvt(E);h+=`<div class="lr tx" style="padding-left:${8+(d+1)*14+14}px" onclick="sel='${n.k}';tab='content';pick('${n.k}')">❝ ${esc(t.length>26?t.slice(0,26)+'…':t)||'(empty)'}</div>`}kids.forEach(c=>h+=row(c,d+1))}return h}
+function renderLeft(){const l=$('#lay');if(!l)return;const st=l.scrollTop;l.innerHTML=`<div class="lh">📄 <b>${pvp.startsWith('r-')?'article':pvp}</b></div>`+row(treeFor(pvp),0);l.scrollTop=st}
+function renderRight(){const r=$('#rp');if(!r)return;const st=r.scrollTop;r.innerHTML=`<div class="tabs">${[['style','Styling'],['content','Content'],['themes','Themes']].map(([k,t])=>`<button class="${tab==k?'on':''}" onclick="tab='${k}';renderRight()">${t}</button>`).join('')}</div>`+(tab=='style'?styleTab():tab=='content'?contentTab():themesTab());r.scrollTop=st}
+function syncChip(){const c=$('#sch');if(!c)return;const s=curS();c.innerHTML=s?`<span class="chip2">${sdef(s).icon} ${esc(sdef(s).name)}${pvS?` · preview <a onclick="pvS=null;updPv();renderRight()">✕</a>`:''}</span>`:'<span style="color:#85858d">No season</span>'}
+function updPv(){const el=$('#pvw');if(!el)return;const st=el.scrollTop;theme(el,effTh());
+el.innerHTML=`<style>${elCss('#pvw')}</style>`+nav(pvp)+(pubPage(pvp)||pubPage('home'))+foot();
+el.querySelectorAll('[onclick],[oninput],[onchange]').forEach(x=>{x.removeAttribute('onclick');x.removeAttribute('oninput');x.removeAttribute('onchange')});el.querySelectorAll('input,select,textarea').forEach(x=>{x.tabIndex=-1;x.readOnly=true});
+el.scrollTop=st;fxSync($('.cvf'),curS(),false);syncChip();drawSel()}
+const det=(t,b,o)=>`<details class="sc" ${(op[t]??o)?'open':''} ontoggle="op['${t}']=this.open"><summary>${t}</summary><div class="fg">${b}</div></details>`;
+function fld(p,label,type,o={}){const k=sel,s=site.el[k]||{},v=s[p],cs=gcs(k,o.cs||p);let i;
+if(type=='color'){const hx=toHex(cs);i=`<div class="cf2"><input type="color" value="${esc(v||hx||'#000000')}" oninput="eS('${k}','${p}',this.value)"><input value="${esc(v||'')}" placeholder="${esc(hx||'default')}" onchange="eS('${k}','${p}',this.value);renderRight()"></div>`}
+else if(type=='sel')i=`<select onchange="eS('${k}','${p}',this.value)">${['',...o.opts].map(x=>`<option value="${x}" ${(v||'')==x?'selected':''}>${x||'default'}</option>`).join('')}</select>`;
+else if(type=='num')i=`<input type="number" step="${o.step||1}" value="${esc(v??'')}" placeholder="${esc(parseFloat(cs)||'')}" oninput="eS('${k}','${p}',this.value)">`;
+else i=`<input value="${esc(v||'')}" placeholder="${esc(o.ph||'')}" oninput="eS('${k}','${p}',this.value)">`;
+return `<label class="fl ${o.w?'wide':''}">${label}${i}</label>`}
+function gsS(i,f,v){const s=ens(sel);s.gs=s.gs||GS0.map(x=>({...x}));s.gs[i][f]=v;dirty();updPv();const g=$('.gbar');if(g)g.style.background=grad(s,1)}
+const gsAdd=()=>{const s=ens(sel);s.gs=s.gs||GS0.map(x=>({...x}));s.gs.push({c:'#00d9ff',p:50});dirty();updPv();renderRight()};
+const gsDel=i=>{const s=ens(sel);s.gs=s.gs||GS0.map(x=>({...x}));if(s.gs.length>2){s.gs.splice(i,1);dirty();updPv();renderRight()}};
+function bgSec(){const s=site.el[sel]||{},t=s.bgType||'';let b=`<div class="seg wide">${[['','None'],['color','Color'],['image','Image'],['gradient','Gradient']].map(([v,l])=>`<button class="${t==v?'on':''}" onclick="eS('${sel}','bgType','${v}');renderRight()">${l}</button>`).join('')}</div>`;
+if(t=='color')b+=fld('bgColor','Background color','color',{cs:'backgroundColor',w:1});
+if(t=='image')b+=fld('bgImg','Image URL','text',{ph:'https://…',w:1});
+if(t=='gradient'){const gs=s.gs||GS0,gt=s.gt||'linear';
+b+=`<div class="gbar wide" style="background:${grad(s,1)}"></div><div class="fl wide">Type<div class="seg"><button class="${gt=='linear'?'on':''}" onclick="eS('${sel}','gt','linear');renderRight()">Linear</button><button class="${gt=='radial'?'on':''}" onclick="eS('${sel}','gt','radial');renderRight()">Radial</button></div></div>`;
+b+=`<div class="fl wide">Stops (color · position %)${gs.map((x,i)=>`<div class="stop"><input type="color" value="${x.c}" oninput="gsS(${i},'c',this.value)"><input value="${x.c}" onchange="gsS(${i},'c',this.value);renderRight()"><input type="number" min="0" max="100" value="${x.p}" oninput="gsS(${i},'p',+this.value)"><button class="ebtn" onclick="gsDel(${i})">−</button></div>`).join('')}<button class="ebtn" onclick="gsAdd()">+ Add stop</button></div>`;
+if(gt=='linear')b+=fld('ga','Angle (deg)','num',{w:1});
+b+=`<label class="ck wide"><input type="checkbox" ${s.textGrad?'checked':''} onchange="eS('${sel}','textGrad',this.checked);renderRight()">Apply gradient to the text (background-clip: text)</label>`}
+return det('Background',b,true)}
+function styleTab(){const k=sel,E=REG[k];
+let h=`<div class="sc"><div class="eh"><span class="tg2">${E.tag}</span><b style="color:#fff">${esc(E.name)}</b><button class="ebtn" style="margin-left:auto" onclick="resetEl()">Reset</button></div><p class="hint" style="margin-top:8px">Click anything in the canvas to select it. Styles apply everywhere this element appears on the site.</p></div>`;
+if(k=='page')h+=pageSec();
+h+=det('Typography',fld('color','Color','color')+fld('fontSize','Size (px)','num')+fld('fontWeight','Weight','sel',{opts:['400','500','600','700','800']})+fld('lineHeight','Line height','text',{ph:'1.4'})+fld('letterSpacing','Letter spacing (px)','num',{step:.5})+fld('textAlign','Align','sel',{opts:['left','center','right']})+fld('textTransform','Case','sel',{opts:['none','uppercase','lowercase','capitalize'],w:1}),true);
+h+=bgSec();
+h+=det('Layout',fld('display','Display','sel',{opts:['none','block','flex','grid','inline-block']})+fld('gap','Gap (px)','num')+fld('padding','Padding','text',{ph:'12px 24px'})+fld('margin','Margin','text',{ph:'0 auto'})+fld('maxWidth','Max width (px)','num',{w:1}),false);
+h+=det('Borders',fld('borderRadius','Radius (px)','num')+fld('borderWidth','Width (px)','num')+fld('borderColor','Border color','color',{w:1}),false);
+h+=det('Effects',fld('opacity','Opacity (0–1)','num',{step:.05})+fld('shadow','Shadow','sel',{opts:['none','soft','glow','hard']}),false);
+h+=det('Advanced',`<label class="fl wide">Custom CSS for this element<textarea rows="4" placeholder="letter-spacing:-2px; transform:rotate(-1deg)" oninput="eS('${k}','raw',this.value)">${esc((site.el[k]||{}).raw||'')}</textarea></label>`,false);
+return h}
+function pageSec(){const th={...TH,...site.th},note=curS()?`<p class="hint wide">A season theme is active, so its colors override these. Edit it in the Themes tab.</p>`:'';
+const flag=(k,l)=>`<label class="ck wide"><input type="checkbox" ${site.th[k]?'checked':''} onchange="sTh('${k}',this.checked)">${l}</label>`;
+return det('Theme & colors',note+`<div class="pre wide">${Object.keys(PR).map(k=>`<button class="ebtn" onclick="preset('${k}')">${k}</button>`).join('')}</div>`+CF.map(([k,l])=>`<label class="fl">${l}<input type="color" value="${th[k]}" oninput="sTh('${k}',this.value)" style="width:100%"></label>`).join('')+
+`<label class="fl wide">Font<select onchange="sTh('font',this.value)">${FONTS.map(f=>`<option ${th.font==f?'selected':''}>${f}</option>`).join('')}</select></label>
+<label class="fl wide"><span>Corner roundness <b id="rv">${th.r}px</b></span><input type="range" min="0" max="32" value="${th.r}" oninput="$('#rv').textContent=this.value+'px';sTh('r',+this.value)"></label>
+<label class="fl wide"><span>Content width <b id="wv">${th.w}px</b></span><input type="range" min="900" max="1400" step="20" value="${th.w}" oninput="$('#wv').textContent=this.value+'px';sTh('w',+this.value)"></label>
+<label class="fl wide">Hero background image URL<input value="${esc(site.th.heroImg||'')}" placeholder="https://…" oninput="sTh('heroImg',this.value.trim())"></label>`+flag('noBadge','Hide hero badge')+flag('noLatest','Hide “Latest research” on home')+
+`<label class="fl wide">Site-wide custom CSS (advanced, live site only)<textarea rows="5" placeholder=".hero h1{letter-spacing:-1px}" oninput="site.css=this.value;dirty()">${esc(site.css)}</textarea></label><button class="ebtn wide" style="color:#ff6b84" onclick="resetAll()">Reset entire site design</button>`,true)}
+function tf(f){const [,k,lb,,m]=f;return `<label class="fl wide">${esc(lb)}${m?`<textarea rows="4" oninput="sT('${k}',this.value)">${esc(raw(k))}</textarea>`:`<input value="${esc(raw(k))}" oninput="sT('${k}',this.value)">`}</label>`}
+function contentTab(){const E=REG[sel];let h=`<div class="sc"><div class="eh"><span class="tg2">${E.tag}</span><b style="color:#fff">${esc(E.name)}</b></div></div>`;
+h+=E.text.length?`<div class="sc"><div class="fg">${E.text.map(k=>tf(F.find(x=>x[1]==k))).join('')}</div></div>`:`<div class="sc"><p class="hint">This element has no editable text of its own. Use the Styling tab, or pick a text element in the layers.</p></div>`;
+const g={};F.forEach(f=>(g[f[0]]=g[f[0]]||[]).push(f));
+return h+Object.entries(g).map(([n,l])=>det('All text · '+n,l.map(tf).join(''),false)).join('')}
+function themesTab(){sSel=sSel||actS()||seasonOf();const k=sSel,d=sdef(k),m=site.season.mode,act=actS();
+const cards=Object.keys(SEASONS).map(x=>{const q=sdef(x);return `<div class="scard ${k==x?'on':''}" onclick="pickS('${x}')">${q.icon} <b style="color:#fff">${esc(q.name)}</b><br><small>${x}${act==x?' · live':''}</small><div class="sw">${['bg','card','cy','bl'].map(c=>`<i style="background:${q[c]}"></i>`).join('')}</div></div>`}).join('');
+const modes=[['off','Off'],['manual','Manual'],['auto','Auto by date']];
+let h=`<div class="sc"><b style="color:#fff">Season theme on the live site</b><div class="seg" style="margin-top:8px">${modes.map(([v,l])=>`<button class="${m==v?'on':''}" onclick="site.season.mode='${v}';dirty();updPv();renderRight()">${l}</button>`).join('')}</div>
+${m=='manual'?`<label class="fl" style="margin-top:8px">Show this season<select onchange="site.season.pick=this.value;dirty();updPv();renderRight()">${Object.keys(SEASONS).map(x=>`<option value="${x}" ${site.season.pick==x?'selected':''}>${sdef(x).icon} ${esc(sdef(x).name)}</option>`).join('')}</select></label>`:''}
+<p class="hint" style="margin-top:8px">${m=='auto'?'Switches by month: Mar–May spring, Jun–Aug summer, Sep–Nov autumn, Dec–Feb winter. Right now: '+sdef(seasonOf()).name+'.':m=='manual'?'The chosen season is always shown.':'Seasons are off, your normal theme is used.'}</p></div>
+<div class="sc"><b style="color:#fff">Seasons</b><p class="hint" style="margin:4px 0 8px">Click one to preview it in the canvas and edit it below.</p><div class="sgrid">${cards}</div></div>`;
+const cl=(c,l)=>`<label class="fl">${l}<input type="color" value="${d[c]}" oninput="sSet('${c}',this.value)" onchange="renderRight()" style="width:100%"></label>`;
+h+=`<div class="sc"><div class="eh"><span style="font-size:18px">${d.icon}</span><b style="color:#fff">Edit ${esc(d.name)}</b></div><div class="fg">
+<label class="fl">Theme name<input value="${esc(d.name)}" oninput="sSet('name',this.value)" onchange="renderRight()"></label><label class="fl">Icon<input value="${esc(d.icon)}" oninput="sSet('icon',this.value)" onchange="renderRight()"></label>
+<label class="fl wide">Hero badge text (empty = normal badge)<input value="${esc(d.badge||'')}" oninput="sSet('badge',this.value)"></label>
+${CF.map(([c,l])=>cl(c,l)).join('')}
+<label class="fl wide">Font<select onchange="sSet('font',this.value)">${FONTS.map(f=>`<option ${d.font==f?'selected':''}>${f}</option>`).join('')}</select></label>
+<label class="fl wide"><span>Corner roundness <b id="sr">${d.r}px</b></span><input type="range" min="0" max="32" value="${d.r}" oninput="$('#sr').textContent=this.value+'px';sSet('r',+this.value)"></label>
+<label class="fl wide">Falling / rising emoji (space separated, empty = none)<input value="${esc(d.fx||'')}" oninput="sSet('fx',this.value)"></label>
+<label class="fl wide"><span>Amount <b id="sn">${d.fxn}</b></span><input type="range" min="0" max="60" value="${d.fxn}" oninput="$('#sn').textContent=this.value;sSet('fxn',+this.value)"></label>
+<label class="fl wide"><span>Seconds per pass (lower = faster) <b id="ss">${d.fxs}</b></span><input type="range" min="6" max="40" value="${d.fxs}" oninput="$('#ss').textContent=this.value;sSet('fxs',+this.value)"></label>
+<label class="fl wide">Direction<select onchange="sSet('dir',this.value)"><option value="down" ${d.dir!='up'?'selected':''}>Falls down</option><option value="up" ${d.dir=='up'?'selected':''}>Rises up</option></select></label>
+<button class="ebtn wide pri" onclick="site.season={mode:'manual',pick:sSel};pvS=null;dirty();updPv();renderRight()">Use ${esc(d.name)} on the live site</button>
+<button class="ebtn wide" onclick="delete site.seasons[sSel];dirty();updPv();renderRight()">Reset ${esc(d.name)} to default</button>
+</div><p class="hint" style="margin-top:8px">Press Save (top right) to publish your changes.</p></div>`;return h}
+
+/* ---------- PUBLIC SITE ---------- */
 const lg=()=>`<div class="logo" onclick="go('home')">${tx('name')}<b>${tx('accent')}</b></div>`;
 const go=h=>{location.hash=h};
 const sorted=l=>[...l].sort((a,b)=>sort=='new'?(b.date||'').localeCompare(a.date||''):(a.date||'').localeCompare(b.date||''));
 const norm=r=>({id:r.id,title:r.title,desc:r.description,cat:r.category||'',date:r.published_at,created:(r.created_at||'').slice(0,10),updated:r.updated_at&&r.updated_at.slice(0,10)!=(r.created_at||'').slice(0,10)?r.updated_at.slice(0,10):'',cover:r.cover_url||'',html:r.content_html,refs:r.refs,files:r.files||[],status:r.status});
 async function load(){const [r,c,s]=await Promise.all([sb.from('reports').select('*'),sb.from('categories').select('name').order('name'),sb.from('settings').select('value').eq('key','site').maybeSingle()]);
 loadErr=r.error?r.error.message:'';all=(r.data||[]).map(norm);pub=all.filter(x=>x.status=='published');drafts=all.filter(x=>x.status!='published');cats=(c.data||[]).map(x=>x.name);
-if(!s.error){loaded=true;if(s.data&&s.data.value){site={...s.data.value};site.t=site.t||{};site.th=site.th||{};site.css=site.css||''}}render()}
+if(!s.error){loaded=true;if(s.data&&s.data.value){site={...s.data.value};ns()}}hist=[];render()}
 function card(r){return `<div class="card" onclick="go('r-${r.id}')"><div class="th" style="${r.cover?`background-image:url('${esc(r.cover)}')`:''}"></div><div class="cb"><div class="meta"><span class="tag">${esc(r.cat)||tx('general')}</span><span>${fd(r.date)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.desc)}</p><span class="btn s o" style="align-self:flex-start">${tx('read_btn')}</span></div></div>`}
 const none=t=>`<div class="empty">${t}</div>`;
 function nav(h){const a=(k,t)=>`<a class="l ${h==k?'on':''}" href="#${k}">${t}</a>`;return `<nav><div class="w">${lg()}<span class="sp"></span>${a('home',tx('nav_home'))}${a('research',tx('nav_research'))}${a('about',tx('nav_about'))}${a('contact',tx('nav_contact'))}<a class="btn s" href="#${isAdmin?'admin':'login'}">${isAdmin?tx('nav_dash'):tx('nav_login')}</a></div></nav>`}
@@ -106,7 +313,7 @@ function archive(list){const f=sorted(list.filter(r=>(!cat||r.cat==cat)&&(!q||((
 let t;function sch(){clearTimeout(t);t=setTimeout(()=>{const p=$('#q').selectionStart;render();const i=$('#q');if(i){i.focus();i.setSelectionRange(p,p)}},250)}
 function pubPage(h){const s=sorted(pub),th=site.th;
 if(h=='home'){const hi=th.heroImg?`background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('${encodeURI(th.heroImg).replace(/'/g,'%27')}');background-size:cover;background-position:center`:'';
-return `<section class="hero" style="${hi}"><div class="w">${th.noBadge?'':`<span class="badge">${tx('badge')}</span>`}<h1>${tx('h1a')} <em>${tx('h1b')}</em> ${tx('h1c')}</h1><p>${tx('hero_p')}</p><br><a class="btn" href="#research">${tx('hero_btn')}</a></div></section>${th.noLatest?'':`<section class="sec"><div class="w"><h2>${tx('latest_h')}</h2>${loadErr?none('Could not load research: '+esc(loadErr)):s.length?`<div class="grid">${s.slice(0,6).map(card).join('')}</div>`:none(tx('latest_empty'))}</div></section>`}${raw('x_h')||raw('x_p')?`<section class="sec"><div class="w"><h2>${tx('x_h')}</h2><p class="body" style="white-space:pre-line">${tx('x_p')}</p></div></section>`:''}`}
+return `<section class="hero" style="${hi}"><div class="w">${th.noBadge?'':`<span class="badge">${bdg()}</span>`}<h1>${tx('h1a')} <em>${tx('h1b')}</em> ${tx('h1c')}</h1><p>${tx('hero_p')}</p><br><a class="btn" href="#research">${tx('hero_btn')}</a></div></section>${th.noLatest?'':`<section class="sec"><div class="w"><h2>${tx('latest_h')}</h2>${loadErr?none('Could not load research: '+esc(loadErr)):s.length?`<div class="grid">${s.slice(0,6).map(card).join('')}</div>`:none(tx('latest_empty'))}</div></section>`}${raw('x_h')||raw('x_p')?`<section class="sec"><div class="w"><h2>${tx('x_h')}</h2><p class="body" style="white-space:pre-line">${tx('x_p')}</p></div></section>`:''}`}
 if(h=='research')return `<section class="sec"><div class="w"><h1>${tx('arch_h')}</h1>${archive(pub)}</div></section>`;
 if(h=='about')return `<section class="sec"><div class="w art"><h1>${tx('about_h')}</h1><p class="body" style="white-space:pre-line">${tx('about')}</p></div></section>`;
 if(h=='contact'){const e=raw('email');return `<section class="sec"><div class="w art"><h1>${tx('contact_h')}</h1><p class="body">${e?`${tx('contact_pre')} <a href="mailto:${esc(e)}">${esc(e)}</a>.`:tx('contact_none')}</p></div></section>`}
@@ -118,32 +325,11 @@ async function doLogin(){const{error}=await sb.auth.signInWithPassword({email:$(
 const logout=async()=>{await sb.auth.signOut();isAdmin=false;go('home');render()};
 const AN=[['admin','Overview'],['admin-all','All Research'],['admin-new','Create Research'],['admin-cats','Categories'],['admin-editor','Website Editor']];
 
-/* ---------- WEBSITE EDITOR ---------- */
-function editorPage(){const th={...TH,...site.th};
-const groups={};F.forEach(f=>(groups[f[0]]=groups[f[0]]||[]).push(f));
-const txt=Object.entries(groups).map(([g,l])=>`<details><summary>${g}</summary><div class="f">${l.map(([,k,lb,,m])=>`<label>${esc(lb)}${m?`<textarea rows="4" oninput="sT('${k}',this.value)">${esc(raw(k))}</textarea>`:`<input value="${esc(raw(k))}" oninput="sT('${k}',this.value)">`}</label>`).join('')}</div></details>`).join('');
-const pages=[['home','Home'],['research','Research'],['about','About'],['contact','Contact']].concat(pub.length?[['r-'+pub[0].id,'Article']]:[]);
-return `<h1>Website Editor</h1><p class="meta" style="font-size:14px;flex-wrap:wrap">Changes save automatically and go live for every visitor. <span id="sst" class="tag">✓ Up to date</span></p>
-<div class="ed2"><div class="ctl">
-<details open><summary>Theme &amp; colors</summary><div class="f"><div class="pre">${Object.keys(PR).map(k=>`<button class="btn s o" onclick="preset('${k}')">${k}</button>`).join('')}</div>
-<div class="two">${CF.map(([k,l])=>`<label>${l}<input type="color" value="${th[k]}" oninput="sTh('${k}',this.value)"></label>`).join('')}</div>
-<label>Font<select onchange="sTh('font',this.value)">${FONTS.map(f=>`<option ${th.font==f?'selected':''}>${f}</option>`).join('')}</select></label>
-<label>Corner roundness (${th.r}px)<input type="range" min="0" max="32" value="${th.r}" oninput="this.parentNode.firstChild.textContent='Corner roundness ('+this.value+'px)';sTh('r',+this.value)"></label>
-<label>Content width (${th.w}px)<input type="range" min="900" max="1400" step="20" value="${th.w}" oninput="this.parentNode.firstChild.textContent='Content width ('+this.value+'px)';sTh('w',+this.value)"></label>
-<label>Hero background image URL (optional)<input value="${esc(site.th.heroImg||'')}" placeholder="https://…" oninput="sTh('heroImg',this.value.trim())"></label>
-<label class="ck"><input type="checkbox" ${site.th.noBadge?'checked':''} onchange="sTh('noBadge',this.checked)">Hide hero badge</label>
-<label class="ck"><input type="checkbox" ${site.th.noLatest?'checked':''} onchange="sTh('noLatest',this.checked)">Hide “Latest research” on home</label></div></details>
-${txt}
-<details><summary>Custom CSS (advanced)</summary><div class="f"><label>Extra CSS for the live site (not shown in preview)<textarea rows="8" oninput="site.css=this.value;sv()" placeholder=".hero h1{letter-spacing:-1px}">${esc(site.css)}</textarea></label></div></details>
-</div><div class="pvbox"><div class="bar" style="margin:0 0 10px"><select onchange="pvp=this.value;updPv()">${pages.map(([k,l])=>`<option value="${k}" ${pvp==k?'selected':''}>Preview: ${l}</option>`).join('')}</select><a class="btn s o" href="#home">View live site</a><button class="btn s d" onclick="resetAll()">Reset all</button></div><div id="pvw" class="sk"></div></div></div>`}
-function updPv(){const el=$('#pvw');if(!el)return;theme(el,site.th);if(!el._b){el._b=1;el.addEventListener('click',e=>{e.preventDefault();e.stopPropagation()},true)}el.innerHTML=nav(pvp)+(pubPage(pvp)||pubPage('home'))+foot()}
-
 function admin(h){let c='';
 if(h=='admin')c=`<h1>Overview</h1><div class="stats"><div class="stat"><b>${pub.length}</b>Published reports</div><div class="stat"><b>${drafts.length}</b>Drafts</div><div class="stat"><b>${cats.length}</b>Categories</div></div><a class="btn" href="#admin-new" onclick="ed=null">+ New report</a> <a class="btn o" href="#admin-editor">Edit website</a><h3 style="margin-top:30px">Recently published</h3>${sorted(pub).slice(0,4).map(r=>`<div class="row"><span class="t">${esc(r.title)}</span><span class="meta">${fd(r.date)}</span></div>`).join('')||none('Nothing published yet.')}`;
 else if(h=='admin-all'){const l=[...all].sort((a,b)=>(b.date||b.created||'').localeCompare(a.date||a.created||''));c=`<h1>All Research</h1>${l.map(r=>{const p=r.status=='published';return `<div class="row"><span class="t">${esc(r.title||'Untitled')}</span><span class="st ${p?'p':''}">${p?'Published':'Draft'}</span><span class="meta">${fd(r.date||r.created)}</span><button class="btn s o" onclick="edit('${r.id}')">Edit</button><button class="btn s ${p?'o':''}" onclick="toggle('${r.id}')">${p?'Unpublish':'Publish'}</button><button class="btn s d" onclick="del('${r.id}')">Delete</button></div>`}).join('')||none('No reports yet.')}`}
 else if(h=='admin-new')c=editor();
 else if(h=='admin-cats')c=`<h1>Categories</h1><div class="bar"><input id="nc" placeholder="New category name"><button class="btn" onclick="addCat()">Add</button></div>${cats.map((x,i)=>`<div class="row"><span class="t">${esc(x)}</span><button class="btn s d" onclick="rmCat(${i})">Remove</button></div>`).join('')||none('No categories yet.')}`;
-else if(h=='admin-editor')c=editorPage();
 return `<div class="adm"><div class="side">${AN.map(([k,t])=>`<a class="${h==k?'on':''}" onclick="${k=='admin-new'?'ed=null;':''}go('${k}')">${t}</a>`).join('')}<a onclick="logout()">Logout</a></div><div class="main">${c}</div></div>`}
 function editor(){const e=ed||{};return `<h1>${e.id?'Edit':'Create'} Research</h1><div class="f"><label>Title<input id="et" value="${esc(e.title)}"></label><label>Short description<textarea id="ed" rows="2">${esc(e.desc)}</textarea></label><div class="two"><label>Category<select id="ec"><option value="">Uncategorised</option>${cats.map(c=>`<option ${e.cat==c?'selected':''}>${esc(c)}</option>`).join('')}</select></label><label>Publication date<input type="date" id="edt" value="${(e.date||today()).slice(0,10)}"></label></div><label>Cover image<input type="file" id="cf" accept="image/*" onchange="upl(this)"></label><div id="cp">${e.cover?`<img src="${esc(e.cover)}" style="max-height:100px;border-radius:8px">`:''}</div><label>PDF files (full report, appendices…)<input type="file" accept="application/pdf" multiple onchange="upf(this)"></label><div id="fl">${fl(e.files)}</div><div><div class="tb"><button onclick="ex('bold')"><b>B</b></button><button onclick="ex('italic')"><i>I</i></button><button onclick="ex('formatBlock','h2')">H2</button><button onclick="ex('formatBlock','h3')">H3</button><button onclick="ex('formatBlock','p')">¶</button><button onclick="ex('insertUnorderedList')">• List</button><button onclick="ex('insertOrderedList')">1. List</button><button onclick="ex('formatBlock','blockquote')">Quote</button><button onclick="lnk()">Link</button><button onclick="tbl()">Table</button><button onclick="$('#if').click()">Image</button><input id="if" type="file" accept="image/*" hidden onchange="imgIn(this)"></div><div id="ce" contenteditable="true">${clean(e.html)}</div></div><label>Sources &amp; references (one per line)<textarea id="er" rows="4">${esc(e.refs)}</textarea></label><div class="bar"><button class="btn o" onclick="preview()">Preview</button><button class="btn o" onclick="save(0)">Save draft</button><button class="btn" onclick="save(1)">${e.status=='published'?'Update published':'Publish'}</button></div><div id="pv"></div></div>`}
 const ex=(c,v)=>{$('#ce').focus();document.execCommand(c,false,v)};
@@ -165,10 +351,16 @@ async function del(id){if(confirm('Delete this report permanently?')){const{erro
 async function addCat(){const v=$('#nc').value.trim();if(!v)return;const{error}=await sb.from('categories').insert({name:v});if(error)alert(error.message);await load()}
 async function rmCat(i){await sb.from('categories').delete().eq('name',cats[i]);await load()}
 function render(){const h=(location.hash||'#home').slice(1);if(document.activeElement&&document.activeElement.id=='ce')return;let b;
-const adm=h=='login'||h.startsWith('admin');
-if(h=='login'||(h.startsWith('admin')&&!isAdmin))b=nav(h)+login();else if(h.startsWith('admin'))b=nav(h)+admin(h);else b=nav(h)+(pubPage(h)||pubPage('home'))+foot();
-theme(document.documentElement,adm?{}:site.th);$('#cu').textContent=adm?'':site.css||'';
-document.title=raw('name')+raw('accent');app.innerHTML=b;if(h=='admin-editor'&&isAdmin)updPv()}
-window.addEventListener('hashchange',()=>{pg=1;render();scrollTo(0,0)});render();
+const adm=h=='login'||h.startsWith('admin'),edt=h=='admin-editor'&&isAdmin;
+if(!edt)pvS=null;
+if(h=='login'||(h.startsWith('admin')&&!isAdmin))b=nav(h)+login();else if(edt)b=editorShell();else if(h.startsWith('admin'))b=nav(h)+admin(h);else b=nav(h)+(pubPage(h)||pubPage('home'))+foot();
+theme(document.documentElement,adm?{}:effTh());$('#cu').textContent=adm?'':(site.css||'')+'\n'+elCss('');
+document.title=raw('name')+raw('accent');app.innerHTML=b;fxSync(document.body,adm?null:curS(),true);if(edt)initEditor()}
+window.addEventListener('hashchange',()=>{pg=1;render();scrollTo(0,0)});
+window.addEventListener('resize',()=>{if($('#sbox'))drawSel()});
+window.addEventListener('beforeunload',e=>{if(isDirty){e.preventDefault();e.returnValue=''}});
+window.addEventListener('keydown',e=>{if(location.hash!='#admin-editor'||!$('.ed'))return;const m=e.ctrlKey||e.metaKey,k=e.key.toLowerCase(),inp=/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'');
+if(m&&k=='s'){e.preventDefault();saveSite()}else if(m&&k=='z'&&!inp){e.preventDefault();e.shiftKey?redo():undo()}else if(m&&k=='y'&&!inp){e.preventDefault();redo()}});
+render();
 sb.auth.getSession().then(({data})=>{isAdmin=!!data.session;load()});
 </script></body></html>
